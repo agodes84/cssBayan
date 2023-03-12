@@ -22,7 +22,8 @@ body {
 .mem-img {
     width: 100%;
     height: auto;
-    align-self: center;
+    object-fit: contain;
+    transition: all 0.8s ease-in-out;
 }
 
 .accordion-img {
@@ -35,6 +36,19 @@ body {
     cursor: pointer;
     padding: 10px;
     transition: 0.5s;
+    position: relative;
+}
+
+.accordion-title::after {
+    content: '';
+    display: block;
+    border-style: solid;
+    border-width: 10px 5px 0 5px;
+    border-color: black transparent transparent transparent;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
 }
 
 .accordion-input {
@@ -46,6 +60,17 @@ body {
     background-color: red;
 }
 
-.accordion-input:checked+.accordion-img {
+.accordion-input:checked~.accordion-img {
     display: block;
+}
+
+.accordion-input:checked~.accordion-title {
+    background-color: red;
+}
+
+.accordion-input:checked~.accordion-title::after {
+    border-style: solid;
+    border-width: 0 5px 10px 5px;
+    border-color: transparent transparent white transparent;
+
 }
