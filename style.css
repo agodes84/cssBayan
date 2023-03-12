@@ -20,15 +20,16 @@ body {
 }
 
 .mem-img {
-    width: 100%;
+    width: 80%;
     height: auto;
-    object-fit: contain;
-    transition: all 0.8s ease-in-out;
+    display: block;
+    margin: 0 auto;
 }
 
 .accordion-img {
     display: none;
-
+    object-fit: contain;
+    transition: all 0.8s ease-in-out;
 }
 
 .accordion-title {
@@ -61,6 +62,10 @@ body {
 }
 
 .accordion-input:checked~.accordion-img {
+    display: block;
+}
+
+.accordion-input:hover~.accordion-img {
     display: block;
 }
 
