@@ -20,12 +20,14 @@ body {
 }
 
 .mem-img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    align-self: center;
 }
 
 .accordion-img {
-    display: none
+    display: none;
+
 }
 
 .accordion-title {
@@ -37,12 +39,13 @@ body {
 
 .accordion-input {
     appearance: none;
+    position: absolute;
 }
 
 .accordion-title:hover {
     background-color: red;
 }
 
-.accordion-input:hover+.accordion-img {
+.accordion-input:checked+.accordion-img {
     display: block;
 }
